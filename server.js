@@ -28,7 +28,7 @@ app.post('/chat', async (req, res) => {
         { role: 'system', content: '你是一個有幫助的AI助手。請使用繁體中文回答。' },
         ...messages
       ],
-      model: 'llama3-70b',
+      model: 'llama3-8b-8192',
     });
 
     res.json({ response: chatCompletion.choices[0]?.message?.content || 'No response' });
