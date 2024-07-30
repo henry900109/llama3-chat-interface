@@ -17,7 +17,7 @@ app.post('/api/chat', async (req, res) => {
     const { messages } = req.body;
     const chatCompletion = await groq.chat.completions.create({
       messages: [
-        { role: 'system', content: '½Ğ¨Ï¥ÎÁcÅé¤¤¤å¦^µª' },
+        { role: 'system', content: 'è«‹ä½¿ç”¨ç¹é«”ä¸­æ–‡å›ç­”' },
         ...messages
       ],
       model: 'llama3-8b-8192',

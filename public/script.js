@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 conversationHistory.push({ role: 'assistant', content: data.response });
             } catch (error) {
                 console.error('Error:', error);
-                addMessage('©êºp¡Aµo¥Í¿ù»~¡C½Ğ¦A¸Õ¤@¦¸¡C', false);
+                addMessage('æŠ±æ­‰ï¼Œç™¼ç”ŸéŒ¯èª¤ã€‚è«‹å†è©¦ä¸€æ¬¡ã€‚', false);
             }
         }
     }
