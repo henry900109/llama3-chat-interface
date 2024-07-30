@@ -17,7 +17,7 @@ app.post('/api/chat', async (req, res) => {
     const { messages } = req.body;
     const chatCompletion = await groq.chat.completions.create({
       messages: [
-        { role: 'system', content: '你是一個有幫助的AI助手。請使用繁體中文回答。' },
+        { role: 'system', content: '請使用繁體中文回答' },
         ...messages
       ],
       model: 'llama3-8b-8192',
