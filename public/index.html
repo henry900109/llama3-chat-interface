@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LLaMA 3 聊天介面</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<body>
+    <div id="chat-container">
+        <div id="chat-header">
+            <h2>LLaMA 3 聊天</h2>
+            <button id="clear-history">清空對話</button>
+        </div>
+        <div id="chat-messages"></div>
+        <div id="input-area">
+            <textarea id="user-input" placeholder="輸入您的訊息..."></textarea>
+            <button id="send-button"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
