@@ -9,50 +9,14 @@ body {
     background-color: #f0f0f0;
 }
 
-#login-container,
 #chat-container {
     width: 80%;
     max-width: 800px;
+    height: 80vh;
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    transition: all 0.3s ease;
-}
-
-#login-container {
-    padding: 40px;
-    text-align: center;
-}
-
-#login-container input {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-#login-container button,
-#logout-button,
-#clear-history {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-#login-container button:hover,
-#logout-button:hover,
-#clear-history:hover {
-    background-color: #0056b3;
-}
-
-#chat-container {
-    height: 80vh;
     display: flex;
     flex-direction: column;
 }
@@ -68,6 +32,20 @@ body {
 
 #chat-header h2 {
     margin: 0;
+}
+
+#clear-history {
+    padding: 10px 20px;
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#clear-history:hover {
+    background-color: #004494;
 }
 
 #chat-messages {

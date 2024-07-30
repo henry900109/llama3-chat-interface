@@ -1,26 +1,18 @@
 const express = require('express');
 const cors = require('cors');
 const { Groq } = require('groq-sdk');
-// 移除 express-session，因為無服務器環境不支持會話
-// const session = require('express-session');
+const path = require('path');
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(express.static('public'));
 
-// 移除 session 中間件
-// app.use(session({...}));
-
 const groq = new Groq({
-  apiKey: process.env.GROQ_API_KEY, // 使用環境變量
+  apiKey: process.env.GROQ_API_KEY,
 });
 
-// 移除登錄和登出路由，因為我們不再使用會話
-// app.post('/login', ...);
-// app.post('/logout', ...);
-
-app.post('/chat', async (req, res) => {
+app.post('/api/chat', async (req, res) => {
   try {
     const { messages } = req.body;
     const chatCompletion = await groq.chat.completions.create({
@@ -38,11 +30,18 @@ app.post('/chat', async (req, res) => {
   }
 });
 
-// 為了 Vercel 的無服務器環境，我們需要導出 app
-module.exports = app;
+// Serve the static files
+app.use(express.static(path.join(__dirname, 'public')));
 
-// 如果不是在 Vercel 環境中，則啟動服務器
+// Handle all other routes
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
+// For local development
 if (process.env.NODE_ENV !== 'production') {
   const PORT = process.env.PORT || 3000;
   app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 }
+
+module.exports = app;
